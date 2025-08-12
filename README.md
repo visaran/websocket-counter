@@ -31,3 +31,13 @@ node server.js
 ```bash
 npm run dev
 ```
+
+## Current weaknesses and improvements
+
+- No payload/schema validation | Improve: validate type and fields (light guards or Zod).
+- Limited observability | Improve: structured logs with ids/timestamps; count messages.
+- No persistence | Improve: persist with localStorage or Redis/DB
+- Security | Improve: Replace `ws://` with `wss://`
+- No authentication/authorization | Improve: add auth with JWT, rate limiting and origin checks.
+- Close connections gracefully | Improve: add `process.on("SIGINT")`
+- Production edges | Improve: env-based URL
