@@ -1,43 +1,29 @@
-# Next.js + Jest
+# Realtime Counter (Next.js + WebSocket)
 
-This example shows how to configure Jest to work with Next.js.
+A tiny end-to-end demo showing a Next.js client that keeps a counter and a Node.js WebSocket server that, once per second, asks every connected client for its current counter value. Each client replies with its number and the server logs the responses.
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
+> Server file: server.js (in the repo root)
 
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
+## Features
 
-## Deploy your own
+- Minimal WebSocket server using ws
+- Each connection gets a UUID (via uuid)
+- Server broadcasts { type: "request_counter" } every 1s
+- Client replies { type: "counter_value", value: <current> }
+- Works with multiple tabs (you’ll see each tab’s value in the server logs)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
+## Prerequisites
 
-## How to Use
+- Node.js 18+ and npm (or pnpm/yarn)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Instructions to run
+
+In two terminals:
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+node server.js
 ```
 
 ```bash
-yarn create next-app --example with-jest with-jest-app
+npm run dev
 ```
-
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
-
-## Running Tests
-
-```bash
-npm test
-```
-
-```bash
-yarn test
-```
-
-```bash
-pnpm test
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
