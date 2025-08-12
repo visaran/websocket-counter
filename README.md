@@ -18,6 +18,10 @@ A tiny end-to-end demo showing a Next.js client that keeps a counter and a Node.
 
 ## Instructions to run
 
+```bash
+npm install
+```
+
 In two terminals:
 
 ```bash
