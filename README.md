@@ -41,3 +41,4 @@ npm run dev
 - No authentication/authorization | Improve: add auth with JWT, rate limiting and origin checks.
 - Close connections gracefully | Improve: add `process.on("SIGINT")`
 - Production edges | Improve: env-based URL
+- Testing | Improve: Add unit and E2E tests
